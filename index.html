@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 
 <html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-</head>
-
-<body>
-    <div class="topnav">
-        <nav style="float:left">
-            <a href="home.html"> <strong>Discussion Forum<strong></a> 
-            </nav>
-            <nav style="float:right">
-                <a href="index.html" >Login</a> |
-                <a href="signup.html" > Signup</a> |
-                <a href="home.html" > Home</a> |
-                <a href="profile.html"> Profile</a> |
-                <input type="text" placeholder="Search"/>
-            </nav>
-        </div><br/><br/><hr>
-        <div class="login" id="enduser">
-            <button type="button" class="collapsible"> End User </button>
-            <form action="" method="post">
-                <input type="text" name=useridentifier placeholder="Username or UserID" ><br/>
-                <input type="password" name="password" placeholder="Password"  ><br/>
-                <a href="forgetpassword.html" >forgot password ?</a>
-                <a href="signup.html" > signup</a><br/>
-                <input type="submit" value="Login"> 
-            </form>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" > 
+        <link rel="stylesheet" type="text/css" href="css/header.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css" >
+        <title>Home</title>
+    </head>
+    <body>
+        <div class="header sticky">
+            <ul>
+                <div class="search-container">
+                    <form action="">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"value=><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li style="float:left;"><a href="index.html" > Discussion Forum</a></li>
+            </ul>
+        </div> 
+        <div class="main">
+            left aside Top Contributors  | question which are answered | right aside which are not answered <br/>
+            <div class="leftmenu">
+            </div>
+            <div class="centermenu">
+                <p><a href=""> Question1</a> tag</p><br/>
+                <p><a href=""> Question2</a> tag</p><br/>
+                <p><a href=""> Question3</a> tag</p><br/>
+                <p><a href=""> Question4</a> tag</p><br/>
+                <p> so on..</p>
+            </div>
+            <div class="rightmenu">
+            </div>
         </div>
-        <div class="login" id="adminuser">
-             <button type="button" class="collapsible"> Admin User </button>
-             <form action="" method="post">
-                <input type="text" name=adminidentifier placeholder="Admin ID" ><br/>
-                <input type="password" name="password" placeholder="Password"  ><br/>
-                <input type="submit" value="Login"> 
-            </form>
-        </div>
-        
         <div class="footer">
-            <h3 ><p style="bottom:5px;position:absolute">Contact us abc@def.com for support</p></h3>
+            <div class="assign">
+                <h5> Discuss the Experience</h5>
+                <p >Having Trouble in Web Enhacement ? Contact @discussion.discuss.com</p>
+                <p>Copyright©2020</p>
+            </div>
         </div>
     </body>
 </html>
