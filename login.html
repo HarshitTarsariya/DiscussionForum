@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 
 <html>
-
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/login.css" >
-        <meta name="viewport" content="width=device-width, initial-scale=1" > 
         <link rel="stylesheet" type="text/css" href="css/header.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Login</title>
@@ -14,75 +12,91 @@
     <body>
         <div class="header sticky">
             <ul>
+                <div class="search-container">
+                    <form action="">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"value=><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <li ><a href="login.html" id="change" >Login</a></li>
+                <li id="profileNavigator"><a href="profile.html" style="display:none" id="changeProfile">Profile</a></li>
+                <li id="homeNavigator"><a href="index.html" id="changeHome">Home</a></li>
                 <li style="float:left;"><a href="index.html" > Discussion Forum</a></li>
             </ul>
-        </div>  
+        </div> <br/>
 
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left:100px;margin-top:100px">Login</button>
-        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login as Admin</button>
-        <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Register</button>
-        <button style="width:auto;" >Register Admin NOT AVAILABLE</button><br/><br/><br/><br/>
-        
+        <button class="submitbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left:560px;margin-top:100px">Login</button>
+        <button class="submitbutton" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login as Admin</button>
+        <button class="submitbutton" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Register</button>
+        <button class="submitbutton" style="width:auto;" >Register Admin NOT AVAILABLE</button><br/><br/><br/><br/>
+        <br/>
+        <button class="submitbutton" id="invalid" style="display:none;color:red;">Invalid Credentials</Button>
         <h1 style="color:white;text-align:center;">Your Problem, Our Solution</h1>
         <h1 style="color:white;text-align:center;">Connect with us .</h1>
         <div id="id01" class="modal">
-            <form class="modal-content animate" action="" method="post">
+            <div class="modal-content animate" >
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                     <img src="images/user.jpg" alt="Avatar" class="avatar" >
                 </div>
                 <div class="container" style="color:white">
                     <label for="uname"><b>Username</b></label>
-                    <input class="input" type="text" placeholder="Enter Username" name="uname" required>
+                    <input class="input" type="text" placeholder="Enter Username" id="uname" required>
 
                     <label for="psw"><b>Password</b></label>
-                    <input class="input" type="password" placeholder="Enter Password" name="psw" required>
-                    
-                    <button type="submit" name="user">Login</button>
+                    <input class="input" type="password" placeholder="Enter Password" id="psw" required>
+                    <button class="submitbutton" type="submit" onclick="loginValidation()" name="user">Login</button>
                     <div class="container">
                         <span class="psw">Forgot <a href="forgetpassword.html">password?</a></span>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
         <div id="id02" class="modal">
-            <form class="modal-content animate" action="" method="post">
+            <div class="modal-content animate" >
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                     <img src="images/admin.jpg" alt="Avatar" class="avatar" >
                 </div>
                 <div class="container" style="color:white">
                     <label for="uname"><b>Username</b></label>
-                    <input class="input" type="text" placeholder="Enter Username" name="uname" required>
+                    <input class="input" type="text" placeholder="Enter Username" name="uname_admin" required>
                     <label for="psw"><b>Password</b></label>
                     <input class="input" type="password" placeholder="Enter Password" name="psw" required>
-                    <button type="submit" name="admin">Login</button>
+                    <button type="submit" class="submitbutton" name="admin">Login</button>
                 </div>
-            </form>
+            </div>
         </div>
         <div id="id03" class="modal">
-            <form class="modal-content animate" action="" method="post">
+            <div class="modal-content animate" >
                 <div class="imgcontainer">
                     <h1 style="text-align:center;color:white;">Register<h1>
                     <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
                 </div>
                 <div class="container" style="color:white">
+                    
+                    <label id="usernameError" style="float:right" ></label>
                     <label for="uname"><b>Username</b></label>
-                    <input class="input" type="text" placeholder="Enter Username" name="uname" required>
+                    <input class="input" type="text" placeholder="Enter Username" id="uname_register"  onchange="usernameChange()" required>
                     
+                    <label id="emailError" style="float:right"></label>
                     <label for="emailid"><b>Email-Id</b></label>
-                    <input class="input" type="text" placeholder="Enter Email-id" name="emailid" required>
-
-                    <label for="password"><b>Password</b></label>
-                    <input class="input" type="password" placeholder="Password" name="password" required>
-
-                    <label for="confirmpassword"><b>Password</b></label>
-                    <input class="input" type="password" placeholder="Confirm Password" name="confirmpassword" required>
+                    <input class="input" type="text" onchange="emailChange()" placeholder="Enter Email-id" id="emailid_register" required>
                     
-                    <button type="submit" name="register" >Register</button>
+                    <label id="passwordError" style="float:right"></label>
+                    <label for="password"><b>Password</b></label>
+                    <input class="input" type="password"  onchange="passwordChange()" placeholder="Password" id="password_register" required>
+                    
+                    <label id="confirmpasswordError" style="float:right"></label>
+                    <label for="confirmpassword"><b>Confirm Password</b></label>
+                    <input class="input" type="password" onchange="confirmpasswordChange()" placeholder="Confirm Password" id="confirmpassword_register" required>
+                    
+
+                    <button type="submit" class="submitbutton" onclick="registrationValidation()" name="register" >Register</button>
+                    <label id="usernameError" >awddwa</label>
                     <h3>By Registering you accept our <a href="termsandcondition.html">Terms and Condition</a><h3>
                 </div>
-            </form>
+            </div>
         </div>
         <div class="footer">
             <div class="assign">
@@ -91,5 +105,7 @@
                 <p>Copyright©2020</p>
             </div>
         </div>
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
     </body>
 </html>

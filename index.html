@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" > 
         <link rel="stylesheet" type="text/css" href="css/header.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css" >
         <title>Home</title>
     </head>
     <body>
@@ -17,22 +16,21 @@
                         <button type="submit"value=><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li class="active"><a href="index.html">Home</a></li>
+                <li ><a href="login.html" id="change" >Login</a></li>
+                <li id="profileNavigator" ><a href="profile.html" style="display:none" id="changeProfile">Profile</a></li>
+                <li id="homeNavigator" ><a href="index.html" id="changeHome">Home</a></li>
                 <li style="float:left;"><a href="index.html" > Discussion Forum</a></li>
             </ul>
-        </div> 
-        <div class="main">
-            left aside Top Contributors  | question which are answered | right aside which are not answered <br/>
+        </div> <br/>
+        <div class="main" style="margin-top:100px;font-size:20px">
             <div class="leftmenu">
             </div>
-            <div class="centermenu">
-                <p><a href=""> Question1</a> tag</p><br/>
-                <p><a href=""> Question2</a> tag</p><br/>
-                <p><a href=""> Question3</a> tag</p><br/>
-                <p><a href=""> Question4</a> tag</p><br/>
-                <p> so on..</p>
+            <div class="centermenu" style="color:white">
+                *JAVASCRIPT ADDED<br/>
+                1. Login Validation is done(username=admin , password=admin ) <br/>
+                2. Registration Validation is done<br/>
+                3. When Login / Registration pops-up and when clicked outside that window the window for login/Registration disappears<br/>
+                4. When user logs in with admin the session is created and Login button turns to Logout and when logout is clicked session is removed<br/>
             </div>
             <div class="rightmenu">
             </div>
@@ -44,5 +42,7 @@
                 <p>Copyright©2020</p>
             </div>
         </div>
+        <script src="js/main.js"></script>
+        <script src="js/header.js"></script>
     </body>
 </html>

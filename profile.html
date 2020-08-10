@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html>
@@ -10,7 +9,7 @@
         <title>Profile</title>
     </head>
     <body>
-         <div class="header sticky">
+        <div class="header sticky">
             <ul>
                 <div class="search-container">
                     <form action="">
@@ -18,12 +17,12 @@
                         <button type="submit"value=><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li class="active"><a href="index.html">Home</a></li>
+                <li ><a href="login.html" id="change" >Login</a></li>
+                <li id="profileNavigator" ><a href="profile.html" style="display:none" id="changeProfile">Profile</a></li>
+                <li id="homeNavigator"><a href="index.html" id="changeHome">Home</a></li>
                 <li style="float:left;"><a href="index.html" > Discussion Forum</a></li>
             </ul>
-        </div> 
+        </div> <br/>
         <div class="details">
             Profile Image  |   Followers   |  Following   |   Questions  |   Answers   |   Skills 
         </div><br/>
@@ -39,5 +38,7 @@
                 <p>Copyright©2020</p>
             </div>
         </div>
+        <script src="js/main.js"></script>
+        <script src="js/header.js"></script>
     </body>
 </html>
