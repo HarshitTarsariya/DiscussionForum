@@ -11,10 +11,9 @@
     background-color: #005580;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: auto;
 }
 
 button:hover {
@@ -110,5 +109,6 @@ span.psw {
 
 .table11 {
     margin-top: 200px;
-    margin-left: 600px;
+    margin-left: 400px;
+    width: 800px;
 }

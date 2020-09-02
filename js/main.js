@@ -1,13 +1,19 @@
 var block1 = document.getElementById('id01');
 var block2 = document.getElementById('id02');
 var block3 = document.getElementById('id03');
+var flag_for_error = false;
 window.onclick = function(event) {
-    if (event.target == block1)
+    if (event.target == block1) {
         block1.style.display = "none";
-    else if (event.target == block2)
+        document.getElementById("loading_login").style.display = "none";
+    } else if (event.target == block2) {
         block2.style.display = "none";
-    else if (event.target == block3)
+        document.getElementById("loading_admin_login").style.display = "none";
+    } else if (event.target == block3) {
         block3.style.display = "none";
+        document.getElementById("loading_register").style.display = "none";
+    }
+
 }
 
 function loginValidation() {
@@ -17,8 +23,8 @@ function loginValidation() {
         sessionStorage.setItem("user", "admin");
         window.location.href = "index.html";
     } else {
+        sessionStorage.setItem("wrong", "true");
         window.location.href = "login.html";
-        document.getElementById("invalid").style.display = "block";
     }
 }
 // Temporary username having alphanumeric character is Valid
@@ -98,12 +104,25 @@ function confirmpasswordChange() {
 }
 
 function logout() {
-    console.log("world");
-    console.log("hello");
+    sessionStorage.removeItem('user');
     window.location.href = "index.html";
 }
-if (sessionStorage.user == "admin") {
+if (sessionStorage["user"] == "admin") {
     document.getElementById("change").innerHTML = "Logout";
     document.getElementById("change").onclick = function() { logout(); };
     document.getElementById("changeProfile").style.display = "block";
+} else {
+    if (sessionStorage["wrong"] == "true") {
+        document.getElementById("invalid").style.display = "inline";
+        sessionStorage["wrong"] = "false";
+    }
+}
+
+function click_details(i, j, link1, link2) {
+    var tab = document.getElementById(i);
+    tab.style.display = "block";
+    var other = document.getElementById(j);
+    other.style.display = "none";
+    link1.className = "active";
+    link2.className = "";
 }

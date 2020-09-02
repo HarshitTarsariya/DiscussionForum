@@ -2,38 +2,56 @@
 
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/login.css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
         <link rel="stylesheet" type="text/css" href="css/header.css" >
+        <link rel="stylesheet" type="text/css" href="css/login.css" >
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Login</title>
     </head>
-
     <body>
-        <div class="header sticky">
+        <div class="header sticky container-fluid">
             <ul>
                 <div class="search-container">
                     <form action="">
                         <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"value=><i class="fa fa-search"></i></button>
+                        <button type="submit" value=><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <li ><a href="login.html" id="change" >Login</a></li>
+                <li id="loginNavigator"><a href="login.html" id="change" >Login</a></li>
                 <li id="profileNavigator"><a href="profile.html" style="display:none" id="changeProfile">Profile</a></li>
                 <li id="homeNavigator"><a href="index.html" id="changeHome">Home</a></li>
-                <li style="float:left;"><a href="index.html" > Discussion Forum</a></li>
+                <li style="float:left;"><a href="index.html" >Discussion Forum</a></li>
             </ul>
         </div> <br/>
-
-        <button class="submitbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left:560px;margin-top:100px">Login</button>
-        <button class="submitbutton" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login as Admin</button>
-        <button class="submitbutton" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Register</button>
-        <button class="submitbutton" style="width:auto;" >Register Admin NOT AVAILABLE</button><br/><br/><br/><br/>
+        <div class="btn-group" style="margin-left:15px;">
+            <button class="submitbutton btn" onclick="document.getElementById('id01').style.display='block';document.getElementById('loading_login').style.display='block'" style="margin-top:50px">
+                <span class="spinner-border spinner-border-sm" id="loading_login" style="display:none"></span>
+                Login
+            </button>
+            <button class="submitbutton btn" onclick="document.getElementById('id02').style.display='block';document.getElementById('loading_admin_login').style.display='block'" style="margin-top:50px">
+            <span class="spinner-border spinner-border-sm" id="loading_admin_login" style="display:none"></span>
+                Login as Admin
+            </button>
+                
+            <button class="submitbutton btn" onclick="document.getElementById('id03').style.display='block';document.getElementById('loading_register').style.display='block'" style="margin-top:50px">
+            <span class="spinner-border spinner-border-sm" id="loading_register" style="display:none"></span>
+                Register
+            </button>
+            
+            <button class="submitbutton btn"  style="margin-top:50px">Register Admin NOT AVAILABLE</button><br/>
+        </div>
         <br/>
-        <button class="submitbutton" id="invalid" style="display:none;color:red;">Invalid Credentials</Button>
-        <h1 style="color:white;text-align:center;">Your Problem, Our Solution</h1>
-        <h1 style="color:white;text-align:center;">Connect with us .</h1>
-        <div id="id01" class="modal">
+        <p class="bg-danger text-white" id="invalid" style="margin-left:15px;display:none">Invalid Credentials</p>
+        <br/><br/><br/>
+        <br/>
+        
+        <h1 style="text-align:center;">Your Problem, Our Solution</h1>
+        <h1 style="text-align:center;">Connect with us .</h1>
+        <div id="id01" class="modal container-fluid">
             <div class="modal-content animate" >
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -52,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <div id="id02" class="modal">
+        <div id="id02" class="modal container-fluid">
             <div class="modal-content animate" >
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -64,10 +82,13 @@
                     <label for="psw"><b>Password</b></label>
                     <input class="input" type="password" placeholder="Enter Password" name="psw" required>
                     <button type="submit" class="submitbutton" name="admin">Login</button>
+                    <div class="container">
+                        <span class="psw">Forgot <a href="forgetpassword.html">password?</a></span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="id03" class="modal">
+        <div id="id03" class="modal container-fluid">
             <div class="modal-content animate" >
                 <div class="imgcontainer">
                     <h1 style="text-align:center;color:white;">Register<h1>
@@ -93,12 +114,11 @@
                     
 
                     <button type="submit" class="submitbutton" onclick="registrationValidation()" name="register" >Register</button>
-                    <label id="usernameError" >awddwa</label>
                     <h3>By Registering you accept our <a href="termsandcondition.html">Terms and Condition</a><h3>
                 </div>
             </div>
         </div>
-        <div class="footer">
+        <div class="footer container-fluid" >
             <div class="assign">
                 <h5> Discuss the Experience</h5>
                 <p >Having Trouble in Web Enhacement ? Contact @discussion.discuss.com</p>

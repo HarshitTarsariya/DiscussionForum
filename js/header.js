@@ -7,3 +7,5 @@ if (page == "profile.html")
     document.getElementById("profileNavigator").className = "active";
 else if (page == "index.html")
     document.getElementById("homeNavigator").className = "active";
+else if (page == "login.html")
+    document.getElementById("loginNavigator").className = "active";

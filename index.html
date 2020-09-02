@@ -2,13 +2,16 @@
 
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" > 
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
         <link rel="stylesheet" type="text/css" href="css/header.css" >
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Home</title>
     </head>
     <body>
-        <div class="header sticky">
+        <div class="header sticky container-fluid">
             <ul>
                 <div class="search-container">
                     <form action="">
@@ -16,7 +19,7 @@
                         <button type="submit"value=><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <li ><a href="login.html" id="change" >Login</a></li>
+                <li id="loginNavigator"><a href="login.html" id="change" >Login</a></li>
                 <li id="profileNavigator" ><a href="profile.html" style="display:none" id="changeProfile">Profile</a></li>
                 <li id="homeNavigator" ><a href="index.html" id="changeHome">Home</a></li>
                 <li style="float:left;"><a href="index.html" > Discussion Forum</a></li>
@@ -25,18 +28,25 @@
         <div class="main" style="margin-top:100px;font-size:20px">
             <div class="leftmenu">
             </div>
-            <div class="centermenu" style="color:white">
-                *JAVASCRIPT ADDED<br/>
-                1. Login Validation is done(username=admin , password=admin ) <br/>
-                2. Registration Validation is done<br/>
-                3. When Login / Registration pops-up and when clicked outside that window the window for login/Registration disappears<br/>
-                4. When user logs in with admin the session is created and Login button turns to Logout and when logout is clicked session is removed<br/>
-            </div>
+            <div class="centermenu " >
+                USERNAME : admin<br/>
+                PASSWORD : admin<br/>
+                *use this credentials to login
+                <div class="container" >
+                    <ul class="pagination pagination-sm justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </div>
             <div class="rightmenu">
             </div>
         </div>
-        <div class="footer">
-            <div class="assign">
+        
+        <div class="footer container-fluid">
+            <div class="assign ">
                 <h5> Discuss the Experience</h5>
                 <p >Having Trouble in Web Enhacement ? Contact @discussion.discuss.com</p>
                 <p>Copyright©2020</p>

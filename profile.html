@@ -3,13 +3,18 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" >
-        <link rel="stylesheet" type="text/css" href="css/header.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/header.css">
         <title>Profile</title>
     </head>
     <body>
-        <div class="header sticky">
+        <div class="header sticky container-fluid">
             <ul>
                 <div class="search-container">
                     <form action="">
@@ -17,21 +22,123 @@
                         <button type="submit"value=><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <li ><a href="login.html" id="change" >Login</a></li>
+                <li id="loginNavigator"><a href="login.html" id="change" >Login</a></li>
                 <li id="profileNavigator" ><a href="profile.html" style="display:none" id="changeProfile">Profile</a></li>
                 <li id="homeNavigator"><a href="index.html" id="changeHome">Home</a></li>
                 <li style="float:left;"><a href="index.html" > Discussion Forum</a></li>
             </ul>
         </div> <br/>
-        <div class="details">
-            Profile Image  |   Followers   |  Following   |   Questions  |   Answers   |   Skills 
-        </div><br/>
-        <img src="images/avtar.jpg" alt="User" ><br/>
-        <button type="submit" value="ollow">Follow</button>
-        <button type="submit" value="contact">Contact</button>
-        <button type="submit" value="edit profile">Edit Profile</button>
+        <div class="container bootstrap snippet" style="margin-top:50px">
+            <div class="row">
+                <div class="col-sm-10"><h1>Username</h1></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="text-center">
+                    <img src="images/avtar.jpg" class="avatar img-circle img-thumbnail" alt="userimage">
+                    <h5>Change avatar</h6>
+                    <input type="file" class="text-center center-block">
+                    </div></hr><br/>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+                        <div class="panel-body"><a href="https://github.com/HarshitTarsariya">GitHub</a></div>
+                    </div>
+
+                    <ul class="list-group">
+                        <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Answered</strong></span> 25</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 25</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Following</strong></span> 120</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 150</li>
+                    </ul> 
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Social Media</div>
+                        <div class="panel-body">
+                            <i class="fa fa-facebook fa-2x"><a href="#"></a></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <ul class="nav nav-tabs">
+                        <li class="active" id="user_details_tab"><a data-toggle="tab" href="" onclick="click_details('user_details','answered_questions','user_details_tab','answered_questions_tab')">Personal Detail</a></li>
+                        <li id="answered_questions_tab"><a data-toggle="tab" href="" onclick="click_details('answered_questions','user_details','answered_questions_tab','user_details_tab')">Answered Questions</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="user_details">
+                            <form class="form" action="" method="post" id="registrationForm">
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <label for="first_name"><h4>First name</h4></label>
+                                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <label for="last_name"><h4>Last name</h4></label>
+                                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <label for="mobile"><h4>Mobile</h4></label>
+                                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <label for="email"><h4>Email</h4></label>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="abc@email.com" title="enter your email.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <label for="password"><h4>Password</h4></label>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <label for="password2"><h4>Verify</h4></label>
+                                        <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <br>
+                                        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                        <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <br/>
+                        <div class="tab-pane active" id="answered_questions"   style="display:none">
+                            <div class="container-fluid">
+                                <div class="card" style="width:auto">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Who seems to be good leader?</h4>
+                                        <p class="card-text">It depends on individuals perspective of way of thinking ...</p>
+                                        <a href="" class="btn btn-primary stretched-link">See Answer</a>
+                                    </div>
+                                </div>
+                                </br>
+                                <div class="card" style="width:auto">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Who seems to be good leader?</h4>
+                                        <p class="card-text">It depends on individuals perspective of way of thinking ...</p>
+                                        <a href="#" class="btn btn-primary stretched-link">See Answer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <div class="footer">
+        <div class="footer container-fluid" style="position:relative">
             <div class="assign">
                 <h5> Discuss the Experience</h5>
                 <p >Having Trouble in Web Enhacement ? Contact @discussion.discuss.com</p>
