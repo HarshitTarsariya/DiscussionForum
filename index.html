@@ -3,8 +3,11 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
         <link rel="stylesheet" type="text/css" href="css/header.css" >
+        <link rel="stylesheet" type="text/css" href="css/small.css" >
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,7 +15,7 @@
         <title>Home</title>
     </head>
     <body>
-        <div class="header sticky container-fluid">
+        <div class="header sticky container-fluid" id="header">
             <ul>
                 <div class="search-container">
                     <form action="">
@@ -26,77 +29,265 @@
                 <li style="float:left;"><a href="index.html" > Discussion Forum</a></li>
             </ul>
         </div> <br/>
-       <div class="container bootstrap snippet">
+       <div class="container-fluid bootstrap snippet">
             <div class="row">
-                <div class="col-1">
-                </div>
-                <div class="col-9">
-                    <div>
-                        <form>
-                            <div class="form-group">
-                                <textarea class="form-control" id="whatsonyourmind" placeholder="Whats on your mind ?" rows="4" ></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button class="btn btn-success">Ask</button>
-                            </div>
-                        </form>
-                    </div>
-                    <hr class="my-4">
-                    <div>
-                        <div class="card p-4 ">
-                            <div class="card-header">
-                                <div class="media">
-                                    <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
-                                    <div class="media-body mt-0 font-weight-bold">
-                                        <a href="profile.html"><h5>Anonymous</h5></a>
-                                        <span >1 Day ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <img src="images/homeimage2.jpg" style="width:100px; float:right; clear:right;"></img>
-                                <p class="card-text">I am getting confused in Form-Filling in addmission process</p>
-                                <a href="index.html" class="btn btn-primary" >See Answer</a></div>
-                            </div>
-                        </div>
-                        <br/>
-                        <hr class="my-4">
-                        <br/>
-                        <div class="card p-4 ">
-                            <div class="card-header">
-                                <div class="media">
-                                    <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
-                                    <div class="media-body mt-0 font-weight-bold">
-                                        <a href="profile.html"><h5>RH</h5></a>
-                                        <span >2 Day ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <img src="images/homeavtar.jpg" style="width:100px; float:right; clear:right;"></img>
-                                <p class="card-text">Who Seems more reasonable to Support</p>
-                                <a href="index.html" class="btn btn-primary" >See Answer</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <br/>
-                    <br/>
-                    <div class="container" style="position:relative">
-                        <ul class="pagination pagination-sm justify-content-center">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
+
+                <div class="col-sm-3">
+                   <div class="md-form active-cyan-2 mb-3">
+                        <form action="">
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                        <button type="submit"value=><i class="fa fa-search"></i></button>
                     </div>
                 </div>
                 
+                <div class="col-sm-6">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="recent-questions-tab" data-toggle="tab" href="#recent-questions" role="tab" aria-controls="recent-questions" aria-selected="true">Recent Questions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="most-answered-tab" data-toggle="tab" href="#most-answered" role="tab" aria-controls="most-answered" aria-selected="">Most Answered</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="most-visited-tab" data-toggle="tab" href="#most-visited" role="tab" aria-controls="most-visited" aria-selected="">Most Visited</a>
+                        </li>
+                    </ul>
+                    <br/>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="recent-questions" role="tabpanel" aria-labelledby="recent-questions-tab">
+
+                            <div class="card p-4 ">
+                                <div class="card-header">
+                                    <div class="media">
+                                        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
+                                        <div class="media-body mt-1 font-weight-bold">
+                                            <a href="profile.html"><strong>Anonymous <span class="badge badge-primary"><i>Verified</i></span></strong></a><p class="card-text" style="float:right"><i class="fa fa-clock-o" aria-hidden="true"></i> 7 june 2018</p>
+                                            <p class="card-text "><h5>I am getting confused in Form-Filling in addmission process<h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="rating">
+                                                <div><i class="fa fa-chevron-up"></i></div>
+                                                <div><i class="fa fa-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <img src="images/homeimage2.jpg" style="width:100px; float:right; clear:right;"></img>
+                                            <p >I am currently applied for the addmission in colleges but I am unable to understand the whole process can anyone help? </p>
+                                            <br/>
+                                            <div class="chip">addmission</div>
+                                            <div class="chip">community</div><br/>
+                                            <br/>
+                                            <div class="jumbotron" style="padding:5px;height:30px">
+                                                <p><i class="fa fa-eye" aria-hidden="true"></i>15 views</p>
+                                            </div>
+                                            
+                                            <a href="index.html" class="btn btn-primary" >Answer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+                            
+                            <div class="card p-4 ">
+                                <div class="card-header">
+                                    <div class="media">
+                                        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
+                                        <div class="media-body mt-1 font-weight-bold">
+                                            <a href="profile.html"><strong>Anonymous</strong></a><p class="card-text" style="float:right"><i class="fa fa-clock-o" aria-hidden="true"></i> 7 june 2018</p>
+                                            <p class="card-text "><h5>I am getting confused in Form-Filling in addmission process<h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="rating">
+                                                <div><i class="fa fa-chevron-up"></i></div>
+                                                <div><i class="fa fa-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <img src="images/homeimage2.jpg" style="width:100px; float:right; clear:right;"></img>
+                                            <p >I am currently applied for the addmission in colleges but I am unable to understand the whole process can anyone help? </p>
+                                            <br/>
+                                            <div class="chip">addmission</div>
+                                            <div class="chip">community</div><br/>
+                                            <br/>
+                                            <div class="jumbotron" style="padding:5px;height:30px">
+                                                <p><i class="fa fa-eye" aria-hidden="true"></i>15 views</p>
+                                            </div>
+                                            
+                                            <a href="index.html" class="btn btn-primary" >Answer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+                            
+                            <div class="card p-4 ">
+                                <div class="card-header">
+                                    <div class="media">
+                                        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
+                                        <div class="media-body mt-1 font-weight-bold">
+                                            <a href="profile.html"><strong>Anonymous</strong></a><p class="card-text" style="float:right"><i class="fa fa-clock-o" aria-hidden="true"></i> 7 june 2018</p>
+                                            <p class="card-text "><h5>I am getting confused in Form-Filling in addmission process<h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="rating">
+                                                <div><i class="fa fa-chevron-up"></i></div>
+                                                <div><i class="fa fa-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <img src="images/homeimage2.jpg" style="width:100px; float:right; clear:right;"></img>
+                                            <p >I am currently applied for the addmission in colleges but I am unable to understand the whole process can anyone help? </p>
+                                            <br/>
+                                            <div class="chip">addmission</div>
+                                            <div class="chip">community</div><br/>
+                                            <br/>
+                                            <div class="jumbotron" style="padding:5px;height:30px">
+                                                <p><i class="fa fa-eye" aria-hidden="true"></i>15 views</p>
+                                            </div>
+                                            
+                                            <a href="index.html" class="btn btn-primary" >Answer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="most-answered" role="tabpanel" aria-labelledby="most-answered-tab" >
+                            <div class="card p-4 ">
+                                <div class="card-header">
+                                    <div class="media">
+                                        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
+                                        <div class="media-body mt-1 font-weight-bold">
+                                            <a href="profile.html"><strong>Anonymous</strong></a><p class="card-text" style="float:right"><i class="fa fa-clock-o" aria-hidden="true"></i> 7 june 2018</p>
+                                            <p class="card-text "><h5>I am getting confused in Form-Filling in addmission process<h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="rating">
+                                                <div><i class="fa fa-chevron-up"></i></div>
+                                                <div><i class="fa fa-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <img src="images/homeimage2.jpg" style="width:100px; float:right; clear:right;"></img>
+                                            <p >I am currently applied for the addmission in colleges but I am unable to understand the whole process can anyone help? </p>
+                                            <br/>
+                                            <div class="chip">addmission</div>
+                                            <div class="chip">community</div><br/>
+                                            <br/>
+                                            <div class="jumbotron" style="padding:5px;height:30px">
+                                                <p><i class="fa fa-eye" aria-hidden="true"></i>15 views</p>
+                                            </div>
+                                            
+                                            <a href="index.html" class="btn btn-primary" >Answer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="tab-pane" id="most-visited" role="tabpanel" aria-labelledby="most-visited-tab" >
+                            <div class="card p-4 ">
+                                <div class="card-header">
+                                    <div class="media">
+                                        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
+                                        <div class="media-body mt-1 font-weight-bold">
+                                            <a href="profile.html"><strong>Anonymous</strong></a><p class="card-text" style="float:right"><i class="fa fa-clock-o" aria-hidden="true"></i> 7 june 2018</p>
+                                            <p class="card-text "><h5>I am getting confused in Form-Filling in addmission process<h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-1">
+                                            <div class="rating">
+                                                <div><i class="fa fa-chevron-up"></i></div>
+                                                <div><i class="fa fa-chevron-down"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <img src="images/homeimage2.jpg" style="width:100px; float:right; clear:right;"></img>
+                                            <p >I am currently applied for the addmission in colleges but I am unable to understand the whole process can anyone help? </p>
+                                            <br/>
+                                            <div class="chip">addmission</div>
+                                            <div class="chip">community</div><br/>
+                                            <br/>
+                                            <div class="jumbotron" style="padding:5px;height:30px">
+                                                <p><i class="fa fa-eye" aria-hidden="true"></i>15 views</p>
+                                            </div>
+                                            
+                                            <a href="index.html" class="btn btn-primary" >Answer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <br/>
-                <div class="col-2">
+
+                <div class="col-sm-3">
+                    <a href="ask_question.html" class="btn btn-primary" style="width:100%">Ask Question</a><br/><br/>
+                    <div class="card p-4 ">
+                        <div class="card-header">Top Contributors</div>
+                        <div class="card-body">
+                            <div class="media">
+                                <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
+                                <div class="media-body mt-1 font-weight-bold">
+                                    <a href="profile.html"><strong>Anonymous</strong></a><br/>
+                                    <p class="card-text">Points : 300</p>
+                                    <span class="badge badge-danger"><h5>Professional</h5></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="media">
+                                <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
+                                <div class="media-body mt-1 font-weight-bold">
+                                    <a href="profile.html"><strong>Anonymous</strong></a><br/>
+                                    <p class="card-text">Points : 300</p>
+                                    <span class="badge badge-info"><h5>Specialist</h5></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-4 ">
+                        <div class="card-header">Trending Tags</div><br/>
+                            <div clas="card-body">
+                                <a class="chip" href="#">Django</a>
+                                <a class="chip" href="#">Admission</a>
+                                <a class="chip" href="#">Javascript</a>
+                                <a class="chip" href="#">Competitive Programming</a>
+                                <a class="chip" href="#">Graph</a>
+                                <a class="chip" href="#">ASP.NET</a>
+                                <a class="chip" href="#">MVC</a>
+                                <a class="chip" href="#">CDN</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <br/>
         <div class="footer container-fluid" style="position:relative">
             <div class="assign ">
                 <h5> Discuss the Experience</h5>
@@ -104,6 +295,13 @@
                 <p>Copyright©2020</p>
             </div>
         </div>
+        <script>
+            $('#myTab a').on('click', function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+                console.log("Hello");
+            })
+        </script>
         <script src="js/main.js"></script>
         <script src="js/header.js"></script>
     </body>

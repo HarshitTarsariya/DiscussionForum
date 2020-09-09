@@ -1,4 +1,4 @@
-    ul {
+    #header ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -8,7 +8,7 @@
         width: 100%;
     }
     
-    li {
+    #header li {
         float: right;
         border-right: 1px solid #bbb;
     }
@@ -17,7 +17,7 @@
         border-right: none;
     }
     
-    li a {
+    #header li a {
         display: block;
         color: white;
         text-align: center;
@@ -26,15 +26,15 @@
         font-size: 20px;
     }
     
-    li a:hover:not(.active) {
+    #header li a:hover:not(.active) {
         background-color: #111;
     }
     
-    .active {
+    #header .active {
         background-color: #005580;
     }
     
-    .search-container {
+    #header .search-container {
         float: right;
         padding: 6px 10px;
         margin-top: 8px;
@@ -77,7 +77,7 @@
     }
     
     @media screen and (max-width: 600px) {
-        li {
+        #header li {
             display: block;
         }
     }
