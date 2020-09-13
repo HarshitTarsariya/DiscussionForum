@@ -20,7 +20,7 @@ button:hover {
     opacity: 0.8;
 }
 
-.imgcontainer {
+.imgcontainer1 {
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
@@ -32,7 +32,7 @@ img.avatar {
     height: 100px;
 }
 
-.container {
+.container1 {
     padding: 16px;
 }
 
@@ -41,7 +41,7 @@ span.psw {
     padding-top: 16px;
 }
 
-.modal {
+.modal1 {
     display: none;
     position: fixed;
     z-index: 1;
@@ -55,7 +55,7 @@ span.psw {
     padding-top: 60px;
 }
 
-.modal-content {
+.modal-content1 {
     background-color: #333;
     margin: 5% auto 15% auto;
     border: 1px solid #888;

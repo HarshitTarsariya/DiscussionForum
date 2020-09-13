@@ -3,14 +3,22 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
         <link rel="stylesheet" type="text/css" href="css/header.css" >
         <link rel="stylesheet" type="text/css" href="css/login.css" >
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <title>Login</title>
+        <style>
+            body{
+                background-image:url("images/login_background.jpg");
+                background-repeat:no-repeat;
+            }
+        </style>
     </head>
     <body>
         <div class="header sticky container-fluid" id="header">
@@ -27,37 +35,36 @@
                 <li style="float:left;"><a href="index.html" >Discussion Forum</a></li>
             </ul>
         </div> <br/>
+        
         <div class="btn-group" style="margin-left:15px;">
-            <button class="submitbutton btn" onclick="document.getElementById('id01').style.display='block';document.getElementById('loading_login').style.display='block'" style="margin-top:50px">
+            <button class="submitbutton btn" onclick="document.getElementById('id01').style.display='block';document.getElementById('loading_login').style.display='block'" style="margin-top:20px">
                 <span class="spinner-border spinner-border-sm" id="loading_login" style="display:none"></span>
                 Login
             </button>
-            <button class="submitbutton btn" onclick="document.getElementById('id02').style.display='block';document.getElementById('loading_admin_login').style.display='block'" style="margin-top:50px">
+            <button class="submitbutton btn" onclick="document.getElementById('id02').style.display='block';document.getElementById('loading_admin_login').style.display='block'" style="margin-top:20px">
             <span class="spinner-border spinner-border-sm" id="loading_admin_login" style="display:none"></span>
                 Login as Admin
             </button>
                 
-            <button class="submitbutton btn" onclick="document.getElementById('id03').style.display='block';document.getElementById('loading_register').style.display='block'" style="margin-top:50px">
+            <button class="submitbutton btn" onclick="document.getElementById('id03').style.display='block';document.getElementById('loading_register').style.display='block'" style="margin-top:20px">
             <span class="spinner-border spinner-border-sm" id="loading_register" style="display:none"></span>
                 Register
             </button>
             
-            <button class="submitbutton btn"  style="margin-top:50px">Register Admin NOT AVAILABLE</button><br/>
+            <button class="submitbutton btn"  style="margin-top:20px">Register Admin NOT AVAILABLE</button><br/>
         </div>
         <br/>
         <p class="bg-danger text-white" id="invalid" style="margin-left:15px;display:none">Invalid Credentials</p>
         <br/><br/><br/>
         <br/>
         
-        <h1 style="text-align:center;">Your Problem, Our Solution</h1>
-        <h1 style="text-align:center;">Connect with us .</h1>
-        <div id="id01" class="modal container-fluid">
-            <div class="modal-content animate" >
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <h6>username and password : admin</h6>
+        <div id="id01" class="modal1 container-fluid">
+            <div class="modal-content1 animate" >
+                <div class="imgcontainer1">
                     <img src="images/user.jpg" alt="Avatar" class="avatar" >
                 </div>
-                <div class="container" style="color:white">
+                <div class="container1" style="color:white">
                     <label for="uname"><b>Username</b></label>
                     <input class="input" type="text" placeholder="Enter Username" id="uname" required>
 
@@ -70,13 +77,12 @@
                 </div>
             </div>
         </div>
-        <div id="id02" class="modal container-fluid">
-            <div class="modal-content animate" >
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <div id="id02" class="modal1 container-fluid">
+            <div class="modal-content1 animate" >
+                <div class="imgcontainer1">
                     <img src="images/admin.jpg" alt="Avatar" class="avatar" >
                 </div>
-                <div class="container" style="color:white">
+                <div class="container1" style="color:white">
                     <label for="uname"><b>Username</b></label>
                     <input class="input" type="text" placeholder="Enter Username" name="uname_admin" required>
                     <label for="psw"><b>Password</b></label>
@@ -88,13 +94,12 @@
                 </div>
             </div>
         </div>
-        <div id="id03" class="modal container-fluid">
-            <div class="modal-content animate" >
-                <div class="imgcontainer">
+        <div id="id03" class="modal1 container-fluid">
+            <div class="modal-content1 animate" >
+                <div class="imgcontainer1">
                     <h1 style="text-align:center;color:white;">Register<h1>
-                    <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
                 </div>
-                <div class="container" style="color:white">
+                <div class="container1" style="color:white">
                     
                     <label id="usernameError" style="float:right" ></label>
                     <label for="uname"><b>Username</b></label>
@@ -114,11 +119,54 @@
                     
 
                     <button type="submit" class="submitbutton" onclick="registrationValidation()" name="register" >Register</button>
-                    <h3>By Registering you accept our <a href="termsandcondition.html">Terms and Condition</a><h3>
+                    
+                    <h5>By Registering you accept our <a data-toggle="modal" data-target="#termsandconditions" class="alert-link" style="width:100%">Terms and Conditions</a><h5>
                 </div>
             </div>
         </div>
-        <h6>username and password : admin</h6>
+
+        <div class="modal fade" id="termsandconditions" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" >Terms and Conditions</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Introduction
+                        These Website Standard Terms and Conditions written on this webpage shall manage your use of our website, Webiste Name accessible at Website.com.
+
+                        These Terms will be applied fully and affect to your use of this Website. By using this Website, you agreed to accept all terms and conditions written in here. You must not use this Website if you disagree with any of these Website Standard Terms and Conditions.
+
+                        Minors or people below 18 years old are not allowed to use this Website.
+
+                        Intellectual Property Rights
+                        Other than the content you own, under these Terms, Company Name and/or its licensors own all the intellectual property rights and materials contained in this Website.
+
+                        You are granted limited license only for purposes of viewing the material contained on this Website.
+
+                        Restrictions
+                        You are specifically restricted from all of the following:
+
+                        publishing any Website material in any other media;
+                        selling, sublicensing and/or otherwise commercializing any Website material;
+                        publicly performing and/or showing any Website material;
+                        using this Website in any way that is or may be damaging to this Website;
+                        using this Website in any way that impacts user access to this Website;
+                        using this Website contrary to applicable laws and regulations, or in any way may cause harm to the Website, or to any person or business entity;
+                        engaging in any data mining, data harvesting, data extracting or any other similar activity in relation to this Website;
+                        using this Website to engage in any advertising or marketing.
+                        Certain areas of this Website are restricted from being access by you and Company Name may further restrict access by you to any areas of this Website, at any time, in absolute discretion. Any user ID and password you may have for this Website are confidential and you must maintain confidentiality as well.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="footer container-fluid" >
             <div class="assign">
                 <h5> Discuss the Experience</h5>
@@ -126,6 +174,7 @@
                 <p>Copyright©2020</p>
             </div>
         </div>
+    
     <script src="js/main.js"></script>
     <script src="js/header.js"></script>
     </body>

@@ -85,7 +85,7 @@
                                             <div class="jumbotron" style="padding:5px;height:30px">
                                                 <p><i class="fa fa-eye" aria-hidden="true"></i>15 views</p>
                                             </div>
-                                            
+                                            <h3>click on answer button and also click answer on next page</h3>
                                             <a href="answer.html" class="btn btn-primary" >Answer</a>
                                         </div>
                                     </div>
@@ -245,7 +245,7 @@
                 <br/>
 
                 <div class="col-sm-3">
-                    <a href="ask_question.html" class="btn btn-primary" style="width:100%">Ask Question</a><br/><br/>
+                    <a data-toggle="modal" data-target="#questionpopup" class="btn btn-primary" style="width:100%">Ask Question</a><br/><br/>
                     <div class="card p-4 shadow">
                         <div class="card-header">Top Contributors</div>
                         <div class="card-body">
@@ -288,6 +288,46 @@
             </div>
         </div>
         <br/>
+
+        <div class="modal fade" id="questionpopup">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header shadow">
+                        <h5 class="modal-title" id="exampleModalLabel">New Question</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="question_title" class="col-form-label">Question Title : </label>
+                                <input type="text" class="form-control shadow" id="question_title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="question-text" class="col-form-label">Question :</label>
+                                <textarea class="form-control shadow" rows="10" id="question-text" required></textarea>
+                            </div>
+                             <div class="form-group">
+                                <label for="question_tags" class="col-form-label" >Relevant <b>Tags</b> : </label>
+                                <input type="text" class="form-control shadow" id="question_title" required>
+                                <label class="col-form-check-label" >If more than one provide comma's eg: education,health</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="images" class="col-form-label">Images for more clarification :</label>
+                                <input type="file" class="form-control" id="images" multiple />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer shadow">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Publish Question</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
         <div class="footer container-fluid" style="position:relative">
             <div class="assign ">
                 <h5> Discuss the Experience</h5>
