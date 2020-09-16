@@ -43,13 +43,13 @@
                 <div class="col-sm-6">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="recent-questions-tab" data-toggle="tab" href="#recent-questions" role="tab" aria-controls="recent-questions" aria-selected="true">Recent Questions</a>
+                            <a class="nav-link active" data-toggle="tab" href="#recent-questions" role="tab" >Recent Questions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="most-answered-tab" data-toggle="tab" href="#most-answered" role="tab" aria-controls="most-answered" aria-selected="">Most Answered</a>
+                            <a class="nav-link" data-toggle="tab" href="#most-answered" role="tab">Most Answered</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="most-visited-tab" data-toggle="tab" href="#most-visited" role="tab" aria-controls="most-visited" aria-selected="">Most Visited</a>
+                            <a class="nav-link" data-toggle="tab" href="#most-visited" role="tab" >Most Visited</a>
                         </li>
                     </ul>
                     <br/>
@@ -57,7 +57,7 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="recent-questions" role="tabpanel" aria-labelledby="recent-questions-tab">
 
-                            <div class="card p-4 shadow">
+                            <div class="card p-4 shadow individual">
                                 <div class="card-header">
                                     <div class="media">
                                         <img class="d-flex rounded-circle avatar z-depth-1-half mr-3 shadow" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
@@ -85,8 +85,16 @@
                                             <div class="jumbotron" style="padding:5px;height:30px">
                                                 <p><i class="fa fa-eye" aria-hidden="true"></i>15 views</p>
                                             </div>
-                                            <h3>click on answer button and also click answer on next page</h3>
+                                            <h3>click Ask question and will add question card dynamically, also delete button in dropdown beside answer button deletes that card</h3>
                                             <a href="answer.html" class="btn btn-primary" >Answer</a>
+                                            <div class="dropdown" style="float:right">
+                                                <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <button class="dropdown-item delete" type="button">Delete</button>
+                                                    <button class="dropdown-item" type="button">Edit</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +102,7 @@
 
                             <hr class="my-4">
                             
-                            <div class="card p-4 shadow">
+                            <div class="card p-4 shadow individual">
                                 <div class="card-header">
                                     <div class="media">
                                         <img class="d-flex rounded-circle avatar z-depth-1-half mr-3 shadow" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
@@ -124,6 +132,14 @@
                                             </div>
                                             
                                             <a href="answer.html" class="btn btn-primary" >Answer</a>
+                                            <div class="dropdown" style="float:right">
+                                                <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <button class="dropdown-item delete" type="button">Delete</button>
+                                                    <button class="dropdown-item" type="button">Edit</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +147,7 @@
 
                             <hr class="my-4">
                             
-                            <div class="card p-4 shadow">
+                            <div class="card p-4 shadow individual">
                                 <div class="card-header">
                                     <div class="media">
                                         <img class="d-flex rounded-circle avatar z-depth-1-half mr-3 shadow" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
@@ -161,6 +177,14 @@
                                             </div>
                                             
                                             <a href="answer.html" class="btn btn-primary" >Answer</a>
+                                            <div class="dropdown" style="float:right">
+                                                <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <button class="dropdown-item delete" type="button">Delete</button>
+                                                    <button class="dropdown-item" type="button">Edit</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +192,7 @@
 
                         </div>
                         <div class="tab-pane shadow" id="most-answered" role="tabpanel" aria-labelledby="most-answered-tab" >
-                            <div class="card p-4 shadow">
+                            <div class="card p-4 shadow individual">
                                 <div class="card-header">
                                     <div class="media">
                                         <img class="d-flex rounded-circle avatar z-depth-1-half mr-3 shadow" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
@@ -198,6 +222,14 @@
                                             </div>
                                             
                                             <a href="answer.html" class="btn btn-primary" >Answer</a>
+                                            <div class="dropdown" style="float:right">
+                                                <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <button class="dropdown-item delete" type="button">Delete</button>
+                                                    <button class="dropdown-item" type="button">Edit</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +237,7 @@
                         </div>
                             
                         <div class="tab-pane" id="most-visited" role="tabpanel" aria-labelledby="most-visited-tab" >
-                            <div class="card p-4 shadow">
+                            <div class="card p-4 shadow individual">
                                 <div class="card-header">
                                     <div class="media">
                                         <img class="d-flex rounded-circle avatar z-depth-1-half mr-3 shadow" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Anonymous">
@@ -235,6 +267,14 @@
                                             </div>
                                             
                                             <a href="answer.html" class="btn btn-primary" >Answer</a>
+                                            <div class="dropdown" style="float:right">
+                                                <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <button class="dropdown-item delete" type="button">Delete</button>
+                                                    <button class="dropdown-item" type="button">Edit</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -246,7 +286,7 @@
 
                 <div class="col-sm-3">
                     <a data-toggle="modal" data-target="#questionpopup" class="btn btn-primary" style="width:100%">Ask Question</a><br/><br/>
-                    <div class="card p-4 shadow">
+                    <div class="card p-4 shadow individual">
                         <div class="card-header">Top Contributors</div>
                         <div class="card-body">
                             <div class="media">
@@ -299,34 +339,36 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form id="questionform">
                             <div class="form-group">
                                 <label for="question_title" class="col-form-label">Question Title : </label>
                                 <input type="text" class="form-control shadow" id="question_title" required>
                             </div>
                             <div class="form-group">
                                 <label for="question-text" class="col-form-label">Question :</label>
-                                <textarea class="form-control shadow" rows="10" id="question-text" required></textarea>
+                                <textarea class="form-control shadow" rows="10" id="question_text" required></textarea>
                             </div>
                              <div class="form-group">
                                 <label for="question_tags" class="col-form-label" >Relevant <b>Tags</b> : </label>
-                                <input type="text" class="form-control shadow" id="question_title" required>
+                                <input type="text" class="form-control shadow" id="question_tag" required>
                                 <label class="col-form-check-label" >If more than one provide comma's eg: education,health</label>
                             </div>
                             <div class="form-group">
                                 <label for="images" class="col-form-label">Images for more clarification :</label>
                                 <input type="file" class="form-control" id="images" multiple />
                             </div>
+                            <div>
+                                <img id="imgD" />
+                            </div>
                         </form>
                     </div>
                     <div class="modal-footer shadow">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Publish Question</button>
+                        <button type="button" id="publish" class="btn btn-primary">Publish Question</button>
                     </div>
                 </div>
             </div>
         </div>
-        
 
         <div class="footer container-fluid" style="position:relative">
             <div class="assign ">
@@ -335,12 +377,7 @@
                 <p>Copyright©2020</p>
             </div>
         </div>
-        <script>
-            $('#myTab a').on('click', function (e) {
-                e.preventDefault()
-                $(this).tab('show');
-            })
-        </script>
+        <script src="js/jquery.js"></script>
         <script src="js/main.js"></script>
         <script src="js/header.js"></script>
     </body>

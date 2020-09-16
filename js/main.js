@@ -117,12 +117,3 @@ if (sessionStorage["user"] == "admin") {
         sessionStorage["wrong"] = "false";
     }
 }
-
-function click_details(i, j, link1, link2) {
-    var tab = document.getElementById(i);
-    tab.style.display = "block";
-    var other = document.getElementById(j);
-    other.style.display = "none";
-    link1.className = "active";
-    link2.className = "";
-}
